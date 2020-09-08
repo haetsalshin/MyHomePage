@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="rootPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
@@ -7,79 +8,47 @@
 <meta charset="UTF-8">
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <title>나의 홈페이지</title>
-<style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
-      .wrapper {
-        width: 1170px;
-        margin: auto;
-      }
-      header {
-        background-image: url("../main/webapp/static/images/바다1.jpg" );
-        height: 100vh;
-        background-size: cover;
-        background-position: center center;
-        position: relative;
-      }
-      .nav-area {
-        float: right;
-        list-style: none;
-        margin-top: 30px;
-      }
-      .nav-area li {
-        display: inline-block;
-      }
-      .nav-area li a {
-        color: #fff;
-        text-decoration: none;
-        padding: 5px 20px;
-        font-size: 16px;
-      }
-      .welcome-text {
-        position: absolute;
-        width: 600px;
-        height: 300px;
-        margin: 20% 30%;
-        text-align: center;
-      }
-      .welcome-text.h1 {
-        text-align: center;
-        color: #fff;
-        text-transform: uppercase;
-        font-size: 60px;
-      }
-      .welcome-text a {
-        border: 1px solid #fff;
-        padding: 10px 25px;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 14px;
-        margin-top: 20px;
-        display: inline-block;
-        color: #fff;
-      }
-      .welcome-text a:hover {
-        background-color: #fff;
-        color: #333;
-      }
-    </style>
+<link rel="stylesheet"
+	href="${rootPath}/static/css/main.css?ver-2020-08-31-003" />
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<!-- font awesome ë§í¬-->
+<script src="https://kit.fontawesome.com/45b24f3187.js"
+	crossorigin="anonymous"></script>
+<style type="text/css">
+<
+style>* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	background-color: skyblue;
+	color: white;
+	text-align: center;
+	padding: 1.5rem;
+}
+</style>
 </head>
- <body>
-    <header>
-      <div class="wrapper">
-        <ul class="nav-area">
-          <li><a href="#">home</a></li>
-          <li><a href="#">주문서 리스트</a></li>
-          <li><a href="#">회원가입</a></li>
-          <li><a href="#">로그인</a></li>
-        </ul>
-      </div>
-      <div class="welcome-text">
-        <h1>Welcome to my homepage</h1>
-        <a href="#">Sonnes Server</a>
-      </div>
-    </header>
-  </body>
+<body>
+	<header>
+		<%@ include file="/WEB-INF/views/include/include-nav.jspf"%>
+	</header>
+	<section>
+		<c:choose>
+			<c:when test="${BODY== 'LOGIN'}">
+				<%@ include file="/WEB-INF/views/component/member_login.jspf"%>
+			</c:when>
+			<c:when test="${BODY== 'MEM_WRITE'}">
+				<%@ include file="/WEB-INF/views/component/member_write.jspf"%>
+			</c:when>
+			<c:when test="${BODY== 'MAP'}">
+				<%@ include file="/WEB-INF/views/component/kakaomap.jspf"%>
+			</c:when>
+			<c:otherwise>
+				<%@ include file="/WEB-INF/views/include/include-nav.jspf"%>
+			</c:otherwise>
+		</c:choose>
+	</section>
+</body>
 </html>

@@ -12,7 +12,7 @@
 
 	</settings>
 	<typeAliases>
-		
+		<typeAlias type="com.biz.homepage.model.MemberVO" alias="MemVO"/>
 	</typeAliases>
 
 </configuration>
