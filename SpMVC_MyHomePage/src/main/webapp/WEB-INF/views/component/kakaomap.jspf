@@ -37,7 +37,7 @@ div {
 
 <body>
 	<!-- 로드뷰를 표시할 div 입니다 -->
-	<div id="roadview"></div>
+	<div id="roadview">
  
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7a13980f95dbab9d4f0d705e47c65478"></script>
@@ -53,5 +53,6 @@ roadviewClient.getNearestPanoId(position, 50, function(panoId) {
     roadview.setPanoId(panoId, position); //panoId와 중심좌표를 통해 로드뷰 실행
 });
 </script>
+</div>
 </body>
 </html>

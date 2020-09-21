@@ -28,7 +28,7 @@ public class MemberController {
 	
 	@RequestMapping(value = "/join", method=RequestMethod.GET)
 	public String join(@ModelAttribute("MEM_VO") MemberVO memVO, Model model) {
-		
+	
 		model.addAttribute("BODY", "MEM_WRITE");
 		
 		return "home";

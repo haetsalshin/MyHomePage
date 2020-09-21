@@ -11,13 +11,19 @@ body{
         background-size: cover;
         background-position: center center;
         position: relative;
+        
+
     }
+    
+
 
 form fieldset {
 	width: 80%;
 	margin: 10px auto;
 	border: 2px dotted purple;
 	border-radius: 5px;
+	
+	
 }
 
 form fieldset legend {
